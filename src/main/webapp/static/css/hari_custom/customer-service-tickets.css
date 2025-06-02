@@ -1,0 +1,108 @@
+:root {
+    --primary-color: #FF7A00;
+    --secondary-color: #2C3E50;
+    --accent-color: #E67E22;
+    --light-bg: #F9F9F9;
+    --status-completed: #2ECC71;
+    --status-pending: #F1C40F;
+}
+
+body {
+    background: linear-gradient(135deg, var(--light-bg) 0%, #FFFFFF 100%);
+    min-height: 100vh;
+}
+
+.service-timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.car-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.timeline-connector {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #E0E0E0;
+    z-index: -1;
+}
+
+.detail-modal .modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-tracker {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 40px 0;
+}
+
+.progress-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #EEE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #EEE;
+    transform: translateY(-50%);
+}

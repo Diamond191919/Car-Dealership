@@ -1,0 +1,156 @@
+/* CSS nâng cao cho sidebar */
+.main-sidebar {
+    width: 250px;
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    padding: 10px;
+}
+
+
+.brand-link:hover {
+    background-color: #f8f9fa;
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+.user-panel {
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.user-panel .image {
+    padding-left: 0;
+}
+
+.user-panel .image img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid #FF7A00;
+    transition: all 0.3s;
+}
+
+.user-panel .image img:hover {
+    transform: scale(1.1);
+    border-color: #FFA559;
+}
+
+.user-panel .info {
+    padding-left: 10px;
+}
+
+.user-panel .info a {
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.user-panel .info a:hover {
+    color: #FF7A00;
+}
+
+.user-panel .badge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.form-control-sidebar {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px 0 0 4px;
+}
+
+.btn-sidebar {
+    background-color: #FF7A00;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+}
+
+.btn-sidebar:hover {
+    background-color: #FFA559;
+    color: white;
+}
+
+.nav-sidebar .nav-link {
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    transition: all 0.2s;
+}
+
+.nav-sidebar .nav-link:hover {
+    background-color: #f8f9fa;
+    color: #FF7A00;
+}
+
+.nav-sidebar .nav-link.active {
+    background-color: #FF7A00;
+    color: white;
+}
+
+.nav-sidebar .nav-link.active:hover {
+    background-color: #FFA559;
+}
+
+.nav-sidebar .nav-treeview .nav-link {
+    padding-left: 30px;
+    font-size: 0.9rem;
+}
+
+.nav-sidebar .nav-icon {
+    margin-right: 10px;
+}
+
+.badge-info {
+    background-color: #17a2b8;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+/* Animation cho dropdown menu */
+.nav-treeview {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.menu-open > .nav-treeview {
+    max-height: 1000px; /* Đủ lớn để chứa tất cả menu items */
+}
+
+/* Hiệu ứng hover cho các icon */
+.nav-icon {
+    transition: transform 0.2s;
+}
+
+.nav-link:hover .nav-icon {
+    transform: scale(1.2);
+}
+
+/* ========== CSS CHO LOGO MINI VÀ LOGO ĐẦY ĐỦ ========== */
+.logo-mini {
+    display: none;
+}
+
+.logo-lg {
+    display: inline-block;
+}
+
+.sidebar-mini.sidebar-collapse .logo-lg {
+    display: none !important;
+}
+
+.sidebar-mini.sidebar-collapse .logo-mini {
+    display: inline-block !important;
+    width: 30px;
+}

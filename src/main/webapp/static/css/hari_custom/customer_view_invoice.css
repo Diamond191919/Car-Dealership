@@ -1,0 +1,94 @@
+/* Biến màu sắc */
+:root {
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-header-bg: #ffffff;
+    --color-header-text: #080808;
+    --color-accent: #FF7A00;
+    /* Cam chính */
+    --color-accent-dark: #E56E00;
+    /* Cam đậm (hover) */
+    --color-accent-light: #FFB673;
+    /* Cam nhạt (accent) */
+    --color-grey-light: #F5F5F5;
+    --color-grey-medium: #CCCCCC;
+    --color-grey-dark: #333333;
+    --color-hero-overlay: linear-gradient(to right,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.3));
+}
+
+/* Vùng content của Invoice */
+.invoice-content {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 20px;
+}
+
+/* Khung chính của Invoice */
+.invoice-wrapper {
+    background-color: var(--color-grey-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Tiêu đề Invoice */
+.invoice-title {
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Phụ đề ngay dưới tiêu đề Invoice */
+.invoice-subtitle {
+    color: var(--color-grey-dark);
+    font-size: 1rem;
+}
+
+/* Tiêu đề công ty, khách hàng */
+.invoice-company-title,
+.invoice-customer-title {
+    color: var(--color-accent-dark);
+    font-weight: 600;
+}
+
+/* Trạng thái đã thanh toán */
+.text-status-paid {
+    color: var(--color-accent-dark);
+}
+
+/* Khu vực tô đậm tổng tiền */
+.total-highlight {
+    color: var(--color-accent-dark);
+    font-weight: 600;
+}
+
+/* Tổng tiền cuối cùng */
+.grand-total {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+/* Nút in hóa đơn */
+.btn-print {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-print:hover {
+    background-color: var(--color-accent-dark);
+}
+
+.totals-table td {
+    vertical-align: middle;
+}
+
+/* Tùy chọn khác (nếu cần) */
+.bg-white {
+    background-color: #fff !important;
+}

@@ -1,0 +1,856 @@
+/* 
+  Sử dụng CSS Variables để hỗ trợ Light/Dark mode 
+  Khi body có class .dark-mode, ta sẽ override biến.
+*/
+
+/* Biến màu mặc định (Light Mode) */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #333333;
+  --color-header-bg: #ffffff;
+  --color-header-text: #080808;
+  --color-accent: #FF7A00;
+  /* Cam chính */
+  --color-accent-dark: #E56E00;
+  /* Cam đậm (hover) */
+  --color-accent-light: #FFB673;
+  /* Cam nhạt (accent) */
+  --color-grey-light: #F5F5F5;
+  --color-grey-medium: #CCCCCC;
+  --color-grey-dark: #333333;
+  --color-hero-overlay: linear-gradient(to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.3));
+}
+
+/* Dark Mode override */
+body.dark-mode {
+  --color-bg: #111111;
+  --color-text: #EEEEEE;
+  --color-header-bg: #222222;
+  --color-header-text: #EEEEEE;
+  --color-grey-light: #2A2A2A;
+  --color-grey-dark: #EEEEEE;
+  --color-hero-overlay: linear-gradient(to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.5));
+}
+
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+/* Container chung */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  position: relative;
+  max-height: 100px;
+  top: 0; left: 0;
+  width: 100%;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 9999; /* cho header nổi trên cùng */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.logo-text span {
+  color: var(--color-text);
+}
+
+.nav-menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-menu a {
+  font-weight: 400;
+}
+
+.nav-menu a:hover {
+  color: var(--color-accent);
+}
+
+/* Auth Buttons */
+.auth-buttons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-left: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  /* Bo tròn góc */
+  padding: 10px 20px;
+  /* Tăng padding để nút lớn hơn một chút */
+  border: 2px solid var(--color-accent);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Thêm transition cho transform và box-shadow */
+}
+
+.btn-login {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+.btn-login:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn-register {
+  background-color: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+  margin-left: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  /* Thêm transition cho tất cả các hiệu ứng */
+}
+
+.btn-register:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-3px);
+  /* Nút nhích lên một chút */
+  box-shadow: 0 6px 12px rgba(255, 165, 0, 0.4);
+  /* Thêm bóng đổ màu cam */
+}
+
+.auth-buttons a:hover {
+  transform: translateY(-2px);
+  /* Nút nhích lên một chút khi hover */
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  /* Thêm bóng đổ màu cam */
+}
+
+/* Menu */
+
+/* Giới hạn chiều rộng của offcanvas */
+.offcanvas-end {
+  width: 33%; /* Chiếm 1/3 màn hình */
+}
+
+.offcanvas-body {
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .offcanvas-end {
+    width: 75% !important; /* Trên màn hình nhỏ, vẫn chiếm toàn bộ chiều rộng */
+  }
+}
+.custom-menu-header{
+  display: flex;
+  align-items: center;
+}
+.custom-menu-header .nav-link {
+  position: relative;
+  color: var(--color-header-text);
+  /* Sử dụng biến màu header */
+  transition: color 0.3s ease;
+}
+
+.custom-menu-header .nav-link:hover {
+  color: var(--color-accent);
+}
+
+.custom-menu-header .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-accent);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.custom-menu-header .nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Toggle Dark/Light Mode */
+.toggle-mode {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/img/car/aston-nartin.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 0 20px;
+  padding-top: 30px;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  animation: slideInTop 1.5s ease-out;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  color: white;
+  font-weight: 400;
+  animation: slideInTop 1.5s ease-out;
+}
+
+.btn-hero-cta {
+  background-color: #FF7A00;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-hero-cta:hover {
+  background-color: #e56e00;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 122, 0, 0.5);
+}
+
+.hero-image {
+  width: 50%;
+  margin-top: 30px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease-in-out;
+  opacity: 0.85;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Add scale effect to hero image */
+.scale-effect {
+  transition: transform 0.3s ease;
+}
+
+/* Slide in animation for text */
+@keyframes slideInTop {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-image img {
+    max-height: 60vh;
+  }
+
+  .btn-hero-cta {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+
+
+/* About */
+.custom-mb-5{
+  padding: 30px 0; /*top-bottom = 30px; left-right = 0px*/
+
+}
+.service-card {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+  border: none;
+  padding-top: 50px;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card img {
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+.service-card .card-body {
+  padding: 2rem;
+}
+
+/* Services */
+.services {
+  padding: 60px 0;
+  background-color: var(--color-bg);
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background-color: #fff;
+  border: 1px solid var(--color-grey-medium);
+  border-radius: 6px;
+  text-align: center;
+  padding: 30px 20px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .service-card {
+  background-color: #444;
+  border-color: #444;
+}
+
+.service-card:hover {
+  transform: scale(1.02);
+  border-color: var(--color-accent);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  background-color: var(--color-grey-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.service-card p {
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+/* Responsive Services */
+@media (max-width: 991px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Featured Cars */
+.featured-cars {
+  padding: 60px 0;
+  position: relative;
+  /* Cần thiết cho cuộn trang */
+  overflow: hidden;
+  /* Ẩn các phần tử vượt quá */
+}
+
+.featured-cars h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  /* Cho hiệu ứng gạch chân */
+  padding-bottom: 10px;
+}
+
+.featured-cars h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+/* Cars grid layout */
+.cars-grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Card design */
+.car-card {
+  background-color: #fff;
+  border: none;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 33.33%;
+  /* Hiển thị 3 xe */
+  margin: 0;
+  /* Loại bỏ margin mặc định */
+  display: inline-block;
+  /* Hiển thị trên cùng dòng */
+  vertical-align: top;
+  /* Căn chỉnh theo chiều dọc */
+}
+
+/* Dark mode card styling */
+body.dark-mode .car-card {
+  background-color: #444;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Image styling */
+.car-card img {
+  margin-bottom: 15px;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Car title */
+.car-card h3 {
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+/* Price styling */
+.price {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* Car detail link styling with border */
+.car-detail-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  /* Thêm padding cho dễ sử dụng */
+  border: 2px solid var(--color-accent);
+  /* Thêm border */
+  border-radius: 5px;
+  text-decoration: none;
+  transition: color 0.3s, border-color 0.3s;
+  /* Hiệu ứng màu và border khi hover */
+
+}
+
+
+.car-detail-link:hover {
+  text-decoration: none;
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  /* Đổi màu border khi hover */
+}
+
+/* Button view all */
+.btn-viewall {
+  display: block;
+  margin: 30px auto 0 auto;
+  padding: 12px 24px;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background-color 0.3s, color 0.3s;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.btn-viewall:hover {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Mobile responsiveness (less than 768px) */
+@media (max-width: 768px) {
+  .cars-grid {
+    grid-template-columns: repeat(1, 1fr);
+    /* Hiển thị 1 xe trên màn hình nhỏ */
+  }
+}
+
+/* Medium screens (tablets, 768px - 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .cars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Hiển thị 2 xe trên màn hình tablet */
+  }
+}
+
+/* Larger screens (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .cars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Hiển thị 3 xe trên desktop */
+  }
+}
+
+
+/* Testimonials */
+.testimonials {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.testimonials h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+/* Container chứa các đánh giá */
+.testimonials-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 15px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Card mỗi đánh giá */
+.testimonial-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  /* Nổi lên khi hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ảnh khách hàng */
+.testimonial-img {
+  margin-bottom: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nội dung lời nhận xét */
+.testimonial-card p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Đánh giá sao */
+.stars {
+  font-size: 1.2rem;
+  color: #FFD700;
+  /* Màu vàng cho sao */
+  margin-bottom: 10px;
+}
+
+/* Tên người dùng */
+.author {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Hiệu ứng fade-in cho phần tử */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* CTA Cuối Trang */
+.cta-section {
+  background: linear-gradient(45deg, #FF7A00, #E56E00);
+  padding: 40px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.btn-cta-white {
+  background-color: #fff;
+  color: var(--color-accent);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-cta-white:hover {
+  background-color: var(--color-accent-light);
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+body.dark-mode .footer {
+  background-color: #111;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.footer-col p,
+.footer-col a,
+.footer-col li {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+.footer-col a:hover {
+  color: var(--color-accent);
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 6px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.social-icons a:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-10px);
+}

@@ -1,0 +1,253 @@
+/* Custom modal styling for Bootstrap */
+.modal-dialog.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px); /* Đảm bảo modal chiếm toàn bộ chiều cao trừ header và footer */
+}
+
+.modal-dialog.modal-lg {
+    max-width: 900px;
+    width: 90%; /* Điều chỉnh kích thước modal trên màn hình lớn */
+}
+
+.custom-modal-content {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%; /* Đảm bảo nội dung modal chiếm toàn bộ chiều rộng dialog */
+}
+
+/* Left side with car image */
+.modal-image {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s ease;
+}
+
+.modal-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+}
+
+.image-overlay h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.image-overlay p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Right side with form */
+.modal-form {
+    width: 100%;
+    padding: 3rem 2.5rem;
+    background-color: #1a1a1a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #777;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-close:hover {
+    color: #FF7A00;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.form-header h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Form elements */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #333;
+    background-color: #222;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #FF7A00;
+    box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.2);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 40px;
+    cursor: pointer;
+    color: #999;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.form-options a {
+    color: #FF7A00;
+    text-decoration: none;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(45deg, #FF6600, #FF8C00);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.form-footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.form-footer a {
+    color: #FF7A00;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-modal-content {
+        flex-direction: column;
+    }
+
+    .modal-image,
+    .modal-form {
+        width: 100%;
+    }
+
+    .modal-image {
+        height: 200px;
+    }
+
+    .modal-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.floating-label-group {
+    position: relative;
+}
+
+/* di chuyển email, pass lên trên */
+.floating-label-group label {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: transparent; /* Đảm bảo label không che khuất background input */
+    padding: 0 0.5rem; /* Thêm padding cho label */
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.floating-label-group input:focus + label,
+.floating-label-group input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 0.8rem;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    border-radius: 50%;
+    background-color: #FF7A00; /* Background color khi label di chuyển lên */
+    color: #ffffff;
+}

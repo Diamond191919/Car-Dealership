@@ -1,0 +1,43 @@
+/* Custom CSS cho trang thống kê */
+.stat-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.stat-card .card-header {
+    background: var(--color-accent);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    padding: 1rem 1.5rem;
+}
+
+.stat-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+    min-height: 350px;
+}
+
+.year-filter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-card .card-body {
+        min-height: auto;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+}

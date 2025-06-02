@@ -1,0 +1,94 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-header-bg: #ffffff;
+    --color-header-text: #080808;
+    --color-accent: #FF7A00;
+    /* Cam chính */
+    --color-accent-dark: #E56E00;
+    /* Cam đậm (hover) */
+    --color-accent-light: #FFB673;
+    /* Cam nhạt (accent) */
+    --color-grey-light: #F5F5F5;
+    --color-grey-medium: #CCCCCC;
+    --color-grey-dark: #333333;
+    --color-hero-overlay: linear-gradient(to right,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.3));
+}
+
+.a {
+    color: var(--color-accent);
+}
+
+.a:hover {
+    color: var(--color-accent-dark);
+}
+.btn-primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+
+.btn-success {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+
+.btn-warning {
+    background-color: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+    color: var(--color-text);
+}
+
+.btn-warning:hover,
+.btn-warning:focus {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.card-primary.card-outline {
+    border-top-color: var(--color-accent);
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+.badge-danger {
+    background-color: #dc3545;
+}
+
+.table thead th {
+    background-color: var(--color-grey-light);
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--color-grey-light);
+}
+
+.table tbody tr:hover {
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,110 @@
+/* ========== Custom Footer Styles ========== */
+.custom-footer {
+    background-color: #222; /* Màu tối hơn để dễ nhìn */
+    color: #fff;
+    padding: 20px 10px;
+    text-align: left;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== Grid Layout ========== */
+.custom-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ========== Footer Sections ========== */
+.custom-footer-col {
+    padding: 10px;
+}
+
+.custom-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #FF7A00;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.custom-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-list li {
+    margin-bottom: 8px;
+}
+
+.custom-link {
+    text-decoration: none;
+    color: #FF7A00;
+    transition: color 0.3s ease;
+}
+
+.custom-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* ========== Footer Contact Section ========== */
+.footer-contact {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* ========== Social Media Icons ========== */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: #FF7A00;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* ========== Responsive Styles ========== */
+@media (max-width: 1024px) {
+    .custom-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .custom-footer {
+        padding: 30px 15px;
+    }
+
+    .custom-heading {
+        font-size: 1rem;
+    }
+
+    .footer-contact {
+        font-size: 0.85rem;
+    }
+
+    .footer-social {
+        gap: 12px;
+    }
+}

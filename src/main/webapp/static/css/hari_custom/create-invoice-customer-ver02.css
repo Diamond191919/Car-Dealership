@@ -1,0 +1,99 @@
+/* Biến màu mặc định (Light Mode) */
+:root {
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-header-bg: #ffffff;
+    --color-header-text: #080808;
+    --color-accent: #FF7A00;
+    --color-accent-dark: #E56E00;
+    --color-accent-light: #FFB673;
+    --color-grey-light: #F5F5F5;
+    --color-grey-medium: #CCCCCC;
+    --color-grey-dark: #333333;
+    --color-hero-overlay: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.header-custom {
+    background-color: var(--color-header-bg);
+    color: var(--color-header-text);
+    padding: 15px;
+    border-bottom: 1px solid var(--color-grey-medium);
+}
+
+.header-custom h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+}
+
+.btn-accent:hover {
+    background-color: var(--color-accent-dark);
+}
+
+.invoice-form-container {
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: var(--color-grey-light);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.invoice-form-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.invoice-form-group {
+    margin-bottom: 15px;
+}
+
+.invoice-form-group label {
+    font-weight: 600;
+}
+
+.service-table thead th {
+    background-color: var(--color-accent-light);
+}
+
+.service-table tbody tr td input {
+    width: 100%;
+    border: 1px solid var(--color-grey-medium);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.total-amount {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .service-table table {
+        font-size: 14px;
+    }
+
+    .invoice-form-container {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,108 @@
+/* ===========================================
+       1. Tùy chỉnh giao diện “hiện đại” hơn
+    =========================================== */
+.content-header h1 {
+    font-weight: 600;
+    color: #333;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-header i {
+    margin-right: 6px;
+    color: #FF7A00;
+    /* Tông cam đặc trưng */
+}
+
+.badge-custom {
+    background-color: #FF7A00;
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* Hiệu ứng khi hover card (làm nổi nhẹ) */
+.card {
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Nút “Tạo Phiếu” (Submit) */
+.btn-custom-submit {
+    background: #FF7A00;
+    color: #fff;
+    transition: all 0.3s ease;
+    border: none;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-custom-submit:hover {
+    background: #e56e00;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 14px rgba(255, 122, 0, 0.3);
+}
+
+/* Nút “Hủy” (Cancel) */
+.btn-custom-cancel {
+    border: 1px solid #ccc;
+    background: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-cancel:hover {
+    background: #e2e6ea;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Thêm hiệu ứng keyframe “bounce-in” cho vui */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.02);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Áp dụng bounceIn cho card-header như ví dụ */
+.card-header {
+    animation: bounceIn 0.5s;
+}
+
+/* ===========================================
+         2. Responsive Tùy Chỉnh
+      =========================================== */
+/* Ẩn bớt hiệu ứng trên màn hình rất nhỏ (tránh “chập chờn” khi chạm tay) */
+@media (max-width: 576px) {
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .btn-custom-submit:hover,
+    .btn-custom-cancel:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}

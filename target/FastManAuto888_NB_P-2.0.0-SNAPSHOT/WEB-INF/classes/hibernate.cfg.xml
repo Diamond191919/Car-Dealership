@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+<!--Cai nay cua Hai-->
+<!--        <property name="hibernate.connection.url">jdbc:sqlserver://LAPTOP-MRA262D7\\SQLEXPRESSCUSTOM:1433;databaseName=Car_DealerShip;-->
+<!--            encrypt=true;trustServerCertificate=true;-->
+<!--            useUnicode=true;characterEncoding=UTF-8</property>-->
+<!--Cai nay cua　Quoc-->
+        <property name="hibernate.connection.url">jdbc:sqlserver://DESKTOP-J94HPC5\\SQLEXPRESSCUSTOM:1433;databaseName=Car_DealerShip;
+            encrypt=true;trustServerCertificate=true;
+            useUnicode=true;characterEncoding=UTF-8</property>
+<!--Cai nay cua　Bao-->
+<!--        <property name="hibernate.connection.url">jdbc:sqlserver://DESKTOP-O773SDH\\SQLEXPRESSCUSTOM:1433;databaseName=Car_DealerShip;-->
+<!--            encrypt=true;trustServerCertificate=true;-->
+<!--            useUnicode=true;characterEncoding=UTF-8</property>-->
+
+        <property name="hibernate.connection.characterEncoding">UTF-8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+
+        <property name="hibernate.connection.username">sa</property>
+        <property name="hibernate.connection.password">sa123456</property>
+
+        <!-- Specify dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Update the database schema on startup -->
+        <property name="hibernate.hbm2ddl.none"></property>
+
+        <!-- Set the current session context -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="connection.pool_size">3</property>
+
+        <!-- Annotated classes -->
+        <mapping class="fptu.edu.vn.trainingcenter.Model.Account"/>
+        <mapping class="fptu.edu.vn.trainingcenter.Model.Mechanic"/>
+        <mapping class="fptu.edu.vn.trainingcenter.Model.Service"/>
+        <mapping class="fptu.edu.vn.trainingcenter.Model.ServiceMechanic"/>
+        <mapping class="fptu.edu.vn.trainingcenter.Model.ServiceTicket"/>
+        <mapping class="fptu.edu.vn.trainingcenter.Model.Role"/>
+        <!-- Add more mappings for other entity classes -->
+    </session-factory>
+</hibernate-configuration>

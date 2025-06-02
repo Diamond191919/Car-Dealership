@@ -1,0 +1,178 @@
+/* === Custom Table Styles === */
+.card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--color-bg);
+}
+
+.table {
+    width: 100%;
+    background: var(--color-bg);
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background: var(--color-accent);
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--color-grey-light);
+    transition: background 0.2s ease;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background: var(--color-grey-light);
+}
+
+.table-hover tbody tr:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* === Action Buttons === */
+.btn-accent {
+    background: var(--color-accent);
+    border: none;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-accent:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 122, 0, 0.3);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+}
+
+.btn-info {
+    background: var(--color-accent-light);
+    border: none;
+    color: var(--color-accent-dark);
+}
+
+.btn-danger {
+    background: #ff4757;
+    border: none;
+    color: #fff;
+}
+
+/* === Modal Customization === */
+.modal-content {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+}
+
+.modal-header {
+    background: var(--color-accent);
+    color: white;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body .form-control {
+    border-radius: 8px;
+    border: 1px solid var(--color-grey-medium);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-body .form-control:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+}
+
+/* === Image Thumbnail === */
+.table img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid var(--color-grey-light);
+}
+
+/* === Status Badges === */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-available {
+    background: rgba(46, 213, 115, 0.2);
+    color: #2ed573;
+}
+
+.status-sold {
+    background: rgba(255, 71, 87, 0.2);
+    color: #ff4757;
+}
+
+/* === Responsive Table (Mobile) === */
+@media (max-width: 768px) {
+    .table-responsive {
+        border-radius: 12px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        border: none;
+        border-bottom: 1px solid var(--color-grey-light);
+    }
+    
+    .table tbody td:last-child {
+        border-bottom: none;
+    }
+    
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--color-accent);
+    }
+}

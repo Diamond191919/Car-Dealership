@@ -1,0 +1,120 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-header-bg: #ffffff;
+    --color-header-text: #080808;
+    --color-accent: #FF7A00;
+    /* Cam chính */
+    --color-accent-dark: #E56E00;
+    /* Cam đậm (hover) */
+    --color-accent-light: #FFB673;
+    /* Cam nhạt (accent) */
+    --color-grey-light: #F5F5F5;
+    --color-grey-medium: #CCCCCC;
+    --color-grey-dark: #333333;
+    --color-hero-overlay: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.content-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-header-text);
+}
+
+.breadcrumb a {
+    color: var(--color-accent);
+}
+
+/* Small Box (statistic card) styles */
+.small-box {
+    border-radius: 0.25rem;
+    position: relative;
+    display: block;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    color: var(--color-text);
+}
+
+.small-box > .inner {
+    padding: 10px;
+}
+
+.small-box h3 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.small-box p {
+    font-size: 1rem;
+}
+
+.small-box .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 3rem;
+    color: var(--color-grey-medium);
+}
+
+.small-box-footer {
+    display: block;
+    padding: 5px 10px;
+    background: var(--color-accent-dark);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+/* Đổi màu nền cho từng thẻ */
+.small-box.bg-info {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.small-box.bg-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.small-box.bg-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.small-box.bg-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* Chart card */
+.chart-card {
+    height: 350px;
+}
+
+/* Custom card header sử dụng màu accent */
+.card-header {
+    background-color: var(--color-accent) !important;
+    color: #fff;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.custom-btn {
+    background-color: green; /* Thay đổi màu nền thành màu xanh lá cây */
+    border-color: green; /* Thay đổi màu viền nếu cần */
+    color: white; /* Thay đổi màu chữ nếu cần */
+}
+
+/* Nếu bạn muốn thay đổi màu khi hover vào nút */
+.custom-btn:hover {
+    background-color: darkgreen;
+    border-color: darkgreen;
+}

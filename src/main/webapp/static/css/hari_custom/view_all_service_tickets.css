@@ -1,0 +1,121 @@
+/* -----------------------------
+       1. KHAI BÁO BIẾN MÀU CHUNG
+    ----------------------------- */
+:root {
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-header-bg: #ffffff;
+    --color-header-text: #080808;
+    --color-accent: #FF7A00;
+    --color-accent-dark: #E56E00;
+    --color-accent-light: #FFB673;
+    --color-grey-light: #F5F5F5;
+    --color-grey-medium: #CCCCCC;
+    --color-grey-dark: #333333;
+    --color-hero-overlay: linear-gradient(to right,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.3));
+}
+
+/* -----------------------------
+       2. ĐỊNH DẠNG NỀN, CHỮ
+    ----------------------------- */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* -----------------------------
+       3. TÙY CHỈNH THẺ CARD
+    ----------------------------- */
+.card {
+    border: 1px solid var(--color-grey-medium);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: var(--color-accent);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px 8px 0 0;
+}
+
+/* -----------------------------
+       4. TÙY CHỈNH BẢNG
+    ----------------------------- */
+/* Header của bảng */
+.table thead th {
+    background-color: var(--color-accent-light);
+    color: var(--color-text);
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Xen kẽ màu cho hàng */
+.table tbody tr:nth-child(even) {
+    background-color: var(--color-grey-light);
+}
+
+/* Viền bảng */
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid var(--color-grey-medium);
+    vertical-align: middle;
+}
+
+/* -----------------------------
+       5. BADGE HOURS
+    ----------------------------- */
+.badge-hours-custom {
+    background-color: var(--color-grey-light);
+    color: var(--color-accent-dark);
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+}
+
+/* -----------------------------
+       6. NÚT HÀNH ĐỘNG
+    ----------------------------- */
+.btn-action-custom {
+    padding: 7px 15px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    margin-right: 5px;
+    font-weight: 500;
+    box-shadow: none !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-action-custom i {
+    margin-right: 5px;
+}
+
+.btn-view-custom {
+    background-color: var(--color-accent-light);
+    color: var(--color-text);
+    border: 1px solid var(--color-accent-light);
+}
+
+.btn-view-custom:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: 1px solid var(--color-accent);
+}
+
+.btn-update-custom {
+    background-color: #e8f5e9;
+    color: #43a047;
+    border: 1px solid #43a047;
+}
+
+.btn-update-custom:hover {
+    background-color: #43a047;
+    color: #fff;
+}
+

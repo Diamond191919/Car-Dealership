@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+<<<<<<< HEAD
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Diamon/Customer/ServiceTicket/viewServiceTicket.jsp" value="file://$PROJECT_DIR$/src/main/webapp/Diamon/Customer/ServiceTicket" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Diamon/Saler/Invoice/invoiceList.jsp" value="file://$PROJECT_DIR$/src/main/webapp/Diamon/Saler/Invoice" />
+=======
+>>>>>>> c89dae7db4540cfb16dbc8010fb6a0e4047280d5
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Diamon/saler/invoice/AddNewInvoice.jsp" value="file://$PROJECT_DIR$/src/main/webapp/Diamon/saler/invoice" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Haricoder/templates/common/script.jsp" value="file://$PROJECT_DIR$/src/main/webapp/Haricoder/templates/common" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/common/home-head.jsp" value="file://$PROJECT_DIR$/src/main/webapp/common" />
+      </map>
+    </option>
+  </component>
+</project>

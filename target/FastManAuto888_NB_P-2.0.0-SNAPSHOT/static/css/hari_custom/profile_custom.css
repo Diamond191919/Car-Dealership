@@ -1,0 +1,125 @@
+/* CSS riêng cho trang Edit Profile */
+.profile-header {
+    background: linear-gradient(135deg, #FF7A00, #FFA559);
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.profile-card {
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-card .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 20px;
+}
+
+.profile-card .form-group label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.profile-card .form-control {
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    transition: border-color 0.3s;
+}
+
+.profile-card .form-control:focus {
+    border-color: #FF7A00;
+    box-shadow: 0 0 0 0.2rem rgba(255, 122, 0, 0.25);
+}
+
+.profile-card .btn-save {
+    background: linear-gradient(135deg, #FF7A00, #FFA559);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.profile-card .btn-save:hover {
+    background: linear-gradient(135deg, #FFA559, #FF7A00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .btn-cancel {
+    background: #f8f9fa;
+    border: 1px solid #ced4da;
+    color: #495057;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.profile-card .btn-cancel:hover {
+    background: #e9ecef;
+}
+
+.profile-image-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.custom-file-upload:hover {
+    background-color: #e9ecef;
+}
+
+.input-readonly {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.user-image{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+}
+
+.user-menu{
+    display: flex;
+    align-items: center;
+}

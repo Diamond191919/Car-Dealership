@@ -1,0 +1,445 @@
+/* Modern Customer Management Styling */
+:root {
+    --color-bg: #f8f9fa;
+    --color-primary: #FF7A00;
+    --color-primary-dark: #E56E00;
+    --color-secondary: #4B6584;
+    --color-success: #10AC84;
+    --color-danger: #EE5253;
+    --color-warning: #F7B731;
+    --color-info: #54A0FF;
+    --color-light: #F1F2F6;
+    --color-dark: #2C3A47;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+.customer-table-wrapper {
+    overflow-x: auto;
+    /* Cho phép cuộn ngang khi màn hình nhỏ */
+}
+
+#customerTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#customerTable th,
+#customerTable td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-grey-medium);
+}
+
+#customerTable th {
+    background-color: var(--color-grey-light);
+    font-weight: bold;
+}
+
+#customerTable tbody tr:nth-child(even) {
+    background-color: var(--color-grey-light);
+}
+
+#customerTable tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+
+.btn-info {
+    background-color: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+    color: var(--color-text);
+}
+
+.btn-info:hover,
+.btn-info:focus {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* Page background and general styles */
+.customer-management-content {
+    background-color: var(--color-bg);
+    padding: 25px;
+    min-height: 100vh;
+}
+
+/* Header styling with animation */
+.customer-management-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.customer-management-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.customer-management-title:hover::after {
+    width: 100%;
+}
+
+/* Modern card-based layout */
+.customer-panel {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: var(--transition);
+}
+
+.customer-panel:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Animated search box */
+.customer-search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.customer-search-box input[type="text"] {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border: 1px solid #e1e5eb;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.customer-search-box input[type="text"]:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.15);
+}
+
+.customer-search-box .btn-search {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.customer-search-box .btn-search:hover {
+    color: var(--color-primary-dark);
+    transform: scale(1.1);
+}
+
+/* Modern table styling */
+.customer-table-wrapper {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.customer-table-wrapper table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.customer-table-wrapper table th {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    font-weight: 600;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #e1e5eb;
+}
+
+.customer-table-wrapper table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e1e5eb;
+    transition: var(--transition);
+}
+
+.customer-table-wrapper table tr:hover td {
+    background-color: rgba(243, 244, 246, 0.7);
+}
+
+/* Action buttons with hover effects */
+.btn-action {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+    margin-right: 5px;
+}
+
+.btn-action i {
+    margin-right: 5px;
+}
+
+.btn-edit {
+    color: white;
+    background-color: var(--color-info);
+    border: none;
+}
+
+.btn-edit:hover {
+    background-color: #2E86DE;
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    color: white;
+    background-color: var(--color-danger);
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #D92027;
+    transform: translateY(-2px);
+}
+
+/* Add button styling */
+.btn-add-customer {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: var(--border-radius);
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.btn-add-customer i {
+    margin-right: 8px;
+}
+
+.btn-add-customer:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(229, 110, 0, 0.3);
+}
+
+/* Status badge styling */
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.status-active {
+    background-color: rgba(16, 172, 132, 0.1);
+    color: var(--color-success);
+}
+
+.status-inactive {
+    background-color: rgba(238, 82, 83, 0.1);
+    color: var(--color-danger);
+}
+
+/* Modal styling */
+.modal-custom .modal-header {
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: calc(var(--border-radius) - 1px) calc(var(--border-radius) - 1px) 0 0;
+    padding: 15px 20px;
+}
+
+.modal-custom .modal-body {
+    padding: 20px;
+}
+
+.modal-custom .form-group label {
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: 8px;
+}
+
+.modal-custom .form-control {
+    padding: 10px 15px;
+    border: 1px solid #e1e5eb;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.modal-custom .form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.15);
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .customer-management-title {
+        font-size: 1.5rem;
+    }
+
+    .btn-add-customer {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .customer-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .table-responsive {
+        min-width: 600px;
+    }
+}
+
+
+/* Modal Styles */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    background-color: var(--color-accent);
+    color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.modal-header .close {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    font-weight: 500;
+    color: var(--color-grey-dark);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: var(--color-accent);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(var(--color-accent-rgb), 0.25);
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.btn-secondary {
+    background-color: var(--color-grey-light);
+    border-color: var(--color-grey-medium);
+    color: var(--color-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-grey-medium);
+    border-color: var(--color-grey-medium);
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+
+/* Nếu bạn muốn sử dụng gradient cho modal-header */
+.modal-header {
+    background: linear-gradient(to bottom, var(--color-accent-light), var(--color-accent));
+    color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1rem 1.5rem;
+}

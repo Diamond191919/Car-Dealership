@@ -1,0 +1,138 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-header-bg: #ffffff;
+    --color-header-text: #080808;
+    --color-accent: #FF7A00;
+    /* Cam chính */
+    --color-accent-dark: #E56E00;
+    /* Cam đậm (hover) */
+    --color-accent-light: #FFB673;
+    /* Cam nhạt (accent) */
+    --color-grey-light: #F5F5F5;
+    --color-grey-medium: #CCCCCC;
+    --color-grey-dark: #333333;
+    --color-hero-overlay: linear-gradient(to right,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.3));
+}
+
+
+.page-title {
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Khu vực bộ lọc */
+.filter-section {
+    margin-bottom: 1.5rem;
+}
+
+.filter-section .btn-filter {
+    background-color: var(--color-accent);
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.filter-section .btn-filter:hover {
+    background-color: var(--color-accent-dark);
+    color: #fff;
+}
+
+/* Nút "New Invoice" bên ngoài bảng */
+.btn-new-invoice {
+    background-color: var(--color-accent);
+    color: #fff;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-new-invoice:hover {
+    background-color: var(--color-accent-dark);
+    color: #fff;
+}
+
+.btn-create-new{
+    display: flex; 
+    justify-content: flex-end;
+}
+
+.btn-choose {
+    background-color: #e0e0e0; /* Màu nền mặc định */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-choose.active {
+    background-color: #4caf50; /* Màu nền khi active (xanh lá) */
+    color: white; /* Màu chữ trắng khi active */
+}
+
+.btn-choose i {
+    font-size: 1.2em;
+}
+
+/* Bảng Invoice */
+.table-invoice th {
+    background-color: var(--color-grey-light);
+}
+
+.table-invoice tbody tr:hover {
+    background-color: var(--color-grey-light);
+    transition: background-color 0.3s;
+}
+
+/* Nút Action trong bảng: toggle status */
+.btn-action {
+    background-color: var(--color-accent);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-action:hover {
+    background-color: var(--color-accent-dark);
+}
+
+/* Modal */
+.modal-header {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.modal-content {
+    border-top: 3px solid var(--color-accent);
+}
+
+.table-customer-select th {
+    background-color: var(--color-grey-light);
+}
+
+.table-customer-select tbody tr:hover {
+    background-color: var(--color-grey-light);
+}
+
+.btn-back {
+    background-color: var(--color-accent);
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: var(--color-accent-dark);
+}
+
+/* Nút chọn trong modal */
+.btn-choose {
+    background-color: var(--color-accent);
+    color: #fff;
+    transition: background-color 0.3s;
+}
+
+.btn-choose:hover {
+    background-color: var(--color-accent-dark);
+}
